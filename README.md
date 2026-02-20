@@ -298,10 +298,12 @@ smile-card/
 
 ## Roadmap
 
-🟢 **Phase 1 — Foundation:** Smart contracts, NFT loyalty cards, tiered staking, and e-commerce storefront deployed to Flow testnet
-⬜ **Phase 2 — Real Commerce:** Merchant SDK, USDC/FLOW payment rails, QR code checkout, and fiat on-ramp for non-crypto users
-⬜ **Phase 3 — Cross-Brand DeFi:** Loyalty token swaps, yield on idle points, brand-to-brand referrals, and dynamic reward multipliers
-⬜ **Phase 4 — Scale & Governance:** Full ZK circuits (Groth16/PLONK), DAO governance, mainnet launch, and multi-chain expansion via Cadence Bridge
+| | Phase | Focus |
+|---|---|---|
+| &#x2705; | **Foundation** | Smart contracts, NFT loyalty cards, staking, e-commerce on testnet |
+| &#x1F7E1; | **Real Commerce** | Merchant SDK, USDC payments, QR checkout, fiat on-ramp |
+| &#x26AA; | **Cross-Brand DeFi** | Token swaps, yield on points, referrals, dynamic multipliers |
+| &#x26AA; | **Scale & Governance** | ZK circuits, DAO, mainnet launch, multi-chain via Cadence Bridge |
 
 ## Tech Stack
 
