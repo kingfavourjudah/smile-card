@@ -1,0 +1,13 @@
+{
+  "name": "smile-card",
+  "version": "1.0.0",
+  "description": "Multi-brand loyalty platform on Flow blockchain",
+  "scripts": {
+    "emulator": "flow emulator start",
+    "deploy": "flow project deploy --network emulator",
+    "test": "flow test cadence/tests/",
+    "dev": "cd frontend && npm run dev"
+  },
+  "keywords": ["flow", "blockchain", "loyalty", "nft"],
+  "license": "MIT"
+}

@@ -1,0 +1,99 @@
+{
+  "networks": {
+    "emulator": "127.0.0.1:3569",
+    "testnet": "access.devnet.nodes.onflow.org:9000",
+    "mainnet": "access.mainnet.nodes.onflow.org:9000"
+  },
+  "accounts": {
+    "emulator-account": {
+      "address": "f8d6e0586b0a20c7",
+      "key": "a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4e5f6a1b2"
+    }
+  },
+  "contracts": {
+    "FungibleToken": {
+      "source": "",
+      "aliases": {
+        "emulator": "0xee82856bf20e2aa6",
+        "testnet": "0x9a0766d93b6608b7",
+        "mainnet": "0xf233dcee88fe0abe"
+      }
+    },
+    "NonFungibleToken": {
+      "source": "",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7",
+        "testnet": "0x631e88ae7f1d7c20",
+        "mainnet": "0x1d7e57aa55817448"
+      }
+    },
+    "MetadataViews": {
+      "source": "",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7",
+        "testnet": "0x631e88ae7f1d7c20",
+        "mainnet": "0x1d7e57aa55817448"
+      }
+    },
+    "ViewResolver": {
+      "source": "",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7",
+        "testnet": "0x631e88ae7f1d7c20",
+        "mainnet": "0x1d7e57aa55817448"
+      }
+    },
+    "FungibleTokenMetadataViews": {
+      "source": "",
+      "aliases": {
+        "emulator": "0xee82856bf20e2aa6",
+        "testnet": "0x9a0766d93b6608b7",
+        "mainnet": "0xf233dcee88fe0abe"
+      }
+    },
+    "Burner": {
+      "source": "",
+      "aliases": {
+        "emulator": "0xf8d6e0586b0a20c7",
+        "testnet": "0x9a0766d93b6608b7",
+        "mainnet": "0xf233dcee88fe0abe"
+      }
+    },
+    "SmileCardToken": {
+      "source": "./cadence/contracts/SmileCardToken.cdc",
+      "aliases": {}
+    },
+    "BrandRegistry": {
+      "source": "./cadence/contracts/BrandRegistry.cdc",
+      "aliases": {}
+    },
+    "StakingContract": {
+      "source": "./cadence/contracts/StakingContract.cdc",
+      "aliases": {}
+    },
+    "SmileCardNFT": {
+      "source": "./cadence/contracts/SmileCardNFT.cdc",
+      "aliases": {}
+    },
+    "ZKVerifier": {
+      "source": "./cadence/contracts/ZKVerifier.cdc",
+      "aliases": {}
+    },
+    "RewardCoordinator": {
+      "source": "./cadence/contracts/RewardCoordinator.cdc",
+      "aliases": {}
+    }
+  },
+  "deployments": {
+    "emulator": {
+      "emulator-account": [
+        "SmileCardToken",
+        "BrandRegistry",
+        "StakingContract",
+        "SmileCardNFT",
+        "ZKVerifier",
+        "RewardCoordinator"
+      ]
+    }
+  }
+}
