@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #6C63FF;
-  --color-secondary: #FF6584;
-  --color-gold: #FFD700;
-  --color-bg: #0f0f1a;
-  --color-surface: #1a1a2e;
-  --color-text: #e0e0e0;
-  --color-text-muted: #8888a0;
+  --color-primary: #1a1a1a;
+  --color-accent: #6C63FF;
+  --color-success: #16a34a;
+  --color-bg: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-text: #1a1a1a;
+  --color-text-muted: #71717a;
+  --color-border: #e5e5e5;
 }
 
 body {
@@ -20,30 +21,38 @@ body {
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(
-      135deg,
-      var(--color-primary),
-      var(--color-secondary)
-    );
+  .text-accent {
+    color: var(--color-accent);
   }
 
-  .bg-gradient-primary {
-    background-image: linear-gradient(
-      135deg,
-      var(--color-primary),
-      var(--color-secondary)
-    );
+  .surface {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
   }
+}
 
-  .glow-primary {
-    box-shadow: 0 0 20px rgba(108, 99, 255, 0.3),
-      0 0 40px rgba(108, 99, 255, 0.1);
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
   }
+  50% {
+    transform: translateY(-10px);
+  }
+}
 
-  .glow-gold {
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3),
-      0 0 40px rgba(255, 215, 0, 0.1);
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
 }

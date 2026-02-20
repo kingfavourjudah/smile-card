@@ -4,26 +4,26 @@ import { useState, useEffect } from "react";
 import { fcl } from "@/config/flow";
 
 interface User {
-  addr: string | null;
+  addr?: string;
   loggedIn: boolean;
 }
 
 export default function ConnectWallet() {
-  const [user, setUser] = useState<User>({ addr: null, loggedIn: false });
+  const [user, setUser] = useState<User>({ loggedIn: false });
 
   useEffect(() => {
-    fcl.currentUser.subscribe(setUser);
+    fcl.currentUser.subscribe((u: any) => setUser(u));
   }, []);
 
   if (user.loggedIn) {
     return (
-      <div className="flex items-center gap-3">
-        <span className="text-sm text-gray-300 bg-[#1a1a2e] px-3 py-1.5 rounded-lg font-mono">
+      <div className="flex items-center gap-2">
+        <span className="text-xs text-zinc-500 bg-gray-50 px-3 py-2 rounded-lg font-mono border border-gray-200">
           {user.addr?.slice(0, 6)}...{user.addr?.slice(-4)}
         </span>
         <button
           onClick={() => fcl.unauthenticate()}
-          className="px-4 py-2 text-sm rounded-lg bg-gray-700 hover:bg-gray-600 transition-colors"
+          className="px-3 py-2 text-xs rounded-lg text-zinc-500 hover:text-[#1a1a1a] hover:bg-gray-50 transition-all"
         >
           Disconnect
         </button>
@@ -34,7 +34,7 @@ export default function ConnectWallet() {
   return (
     <button
       onClick={() => fcl.authenticate()}
-      className="px-6 py-2.5 rounded-lg bg-[#6C63FF] hover:bg-[#5b54e6] transition-colors font-medium text-white shadow-lg shadow-[#6C63FF]/20"
+      className="px-5 py-2.5 rounded-lg bg-[#1a1a1a] hover:bg-[#333] transition-all font-medium text-sm text-white"
     >
       Connect Wallet
     </button>
