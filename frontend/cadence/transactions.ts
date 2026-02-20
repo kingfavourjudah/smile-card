@@ -1,9 +1,11 @@
 const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || "0xf8d6e0586b0a20c7";
+const FUNGIBLE_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_FUNGIBLE_TOKEN_ADDRESS || "0xee82856bf20e2aa6";
+const NON_FUNGIBLE_TOKEN_ADDRESS = process.env.NEXT_PUBLIC_NON_FUNGIBLE_TOKEN_ADDRESS || "0xf8d6e0586b0a20c7";
 
 export const SETUP_COLLECTION = `
 import SmileCardToken from ${CONTRACT_ADDRESS}
 import SmileCardNFT from ${CONTRACT_ADDRESS}
-import NonFungibleToken from ${CONTRACT_ADDRESS}
+import NonFungibleToken from ${NON_FUNGIBLE_TOKEN_ADDRESS}
 import StakingContract from ${CONTRACT_ADDRESS}
 
 transaction(brandID: UInt64) {
@@ -33,7 +35,7 @@ transaction(brandID: UInt64) {
 export const STAKE_TOKENS = `
 import SmileCardToken from ${CONTRACT_ADDRESS}
 import StakingContract from ${CONTRACT_ADDRESS}
-import FungibleToken from 0xee82856bf20e2aa6
+import FungibleToken from ${FUNGIBLE_TOKEN_ADDRESS}
 
 transaction(brandID: UInt64, amount: UFix64) {
     let vault: auth(FungibleToken.Withdraw) &SmileCardToken.Vault
@@ -100,7 +102,7 @@ transaction(index: Int) {
 export const CLAIM_CARD = `
 import SmileCardNFT from ${CONTRACT_ADDRESS}
 import StakingContract from ${CONTRACT_ADDRESS}
-import NonFungibleToken from ${CONTRACT_ADDRESS}
+import NonFungibleToken from ${NON_FUNGIBLE_TOKEN_ADDRESS}
 
 transaction(brandID: UInt64) {
     let minter: auth(SmileCardNFT.MinterEntitlement) &SmileCardNFT.NFTMinter
@@ -134,7 +136,7 @@ transaction(brandID: UInt64) {
 
 export const TRANSFER_TOKENS = `
 import SmileCardToken from ${CONTRACT_ADDRESS}
-import FungibleToken from 0xee82856bf20e2aa6
+import FungibleToken from ${FUNGIBLE_TOKEN_ADDRESS}
 
 transaction(amount: UFix64, recipientAddress: Address) {
     let senderVault: auth(FungibleToken.Withdraw) &SmileCardToken.Vault
