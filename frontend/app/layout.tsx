@@ -27,8 +27,13 @@ export default function RootLayout({
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                   <div className="flex items-center gap-8">
-                    <Link href="/" className="text-xl font-bold text-[#1a1a1a] tracking-tight">
-                      SmileCard
+                    <Link href="/" className="flex items-center">
+                      <img
+                        src="/smile-card.svg"
+                        alt="SmileCard Logo"
+                        width={140}
+                        height={40}
+                        />
                     </Link>
                     <div className="hidden md:flex items-center gap-1">
                       <Link
@@ -55,10 +60,14 @@ export default function RootLayout({
             <main>{children}</main>
             <footer className="border-t border-gray-200 mt-20">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex items-center justify-between">
-                <span className="text-sm text-zinc-400">
-                  <span className="font-semibold text-[#1a1a1a]">SmileCard</span>{" "}
-                  — Loyalty reimagined on Flow
-                </span>
+                <Link href="/" className="flex items-center">
+                      <img
+                        src="/smile-card.svg"
+                        alt="SmileCard Logo"
+                        width={140}
+                        height={40}
+                        />
+                </Link>
                 <span className="text-xs text-zinc-400">
                   Powered by Flow Blockchain
                 </span>
