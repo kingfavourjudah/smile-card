@@ -15,6 +15,18 @@ Connect Wallet → Pick a Brand → Mint Loyalty Card → Shop with Discounts
 3. **Shop** — Browse 12 products across 3 brands. Tier-based discounts are applied automatically.
 4. **Checkout** — Apply a minted loyalty card as a promo card at checkout. Discount is calculated based on the card's tier (Bronze 5%, Silver 10%, Gold 20%).
 
+## Built on Forte
+
+SmileCard is built on Flow's [Forte network upgrade](https://flow.com/forte) — the protocol-level composability and automation layer that makes onchain loyalty infrastructure possible at scale.
+
+**Flow Actions** — SmileCard's mint flow (setup vault + create collection + initialize stake record) executes as a single atomic transaction using Flow Actions' composable operation model. Instead of requiring users to sign 3 separate transactions, the entire onboarding happens in one click. The same composability powers checkout: purchase recording, reward calculation, and token transfer compose into one seamless action.
+
+**Scheduled Transactions** — Loyalty cards have timed lifecycles and staking has built-in release periods. Forte's native scheduling enables these time-based mechanics to execute automatically on-chain — no off-chain cron jobs or manual triggers needed. Reward distributions, staking enforcement, and card renewals can all run as autonomous scheduled workflows.
+
+**Flow Agents** — SmileCard's StakingContract and RewardCoordinator are designed to work with Flow Agents — onchain resources that live inside accounts and trigger automated workflows. Agents handle tier recalculation when stake balances change, process staking claims automatically, and distribute rewards to qualifying users without any manual intervention.
+
+Forte turns SmileCard from a simple loyalty dApp into composable financial infrastructure — where every purchase, stake, and reward is an automated, atomic, onchain operation.
+
 ## Architecture
 
 ```
